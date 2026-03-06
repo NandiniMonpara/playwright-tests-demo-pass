@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 60
 
     env:
-      TESTDINO_TOKEN: ${{ secrets.TESTDINO_TOKEN }}
+      TESTDINO_TOKEN: trx_development_a78ed2d178ab45d9c2dcce15d31696ae97759ae3e14d9a0f0a1b7e8f6f62b0ae
       TESTDINO_SERVER_URL: https://tanika-generic-jenna.ngrok-free.dev
 
     steps:
