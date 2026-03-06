@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
-      TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+            
+      TESTDINO_TOKEN: ${{ secrets.TESTDINO_TOKEN }}
+      TESTDINO_SERVER_URL:  https://tanika-generic-jenna.ngrok-free.dev 
+
 
     steps:
     - uses: actions/checkout@v4
