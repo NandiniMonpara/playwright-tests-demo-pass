@@ -23,7 +23,20 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html']],
+    reporter: [
+    ['html', {
+      outputFolder: 'playwright-report',
+      open: 'never'
+    }],
+    ['blob', { outputDir: 'blob-report' }],
+    ['json', { outputFile: './playwright-report/report.json' }],
+    ['list'],
+    ['@testdino/playwright', {
+      token: process.env.TESTDINO_TOKEN,
+      debug: true,
+      serverUrl: 'https://tanika-generic-jenna.ngrok-free.dev',
+    }],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
